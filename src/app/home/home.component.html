@@ -1,1 +1,595 @@
-<p>home works!</p>
+<div class="dashboard-body">
+
+  <div class="overlay" *ngIf="!isMobile">
+
+    <div class="overlay__sidebar d-sm-none d-md-block d-none d-sm-block">
+      <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="overlay__container">
+
+      <app-navbar style="width: 100%;"></app-navbar>
+
+      <div class="row stats-item">
+        <ng-container *ngFor="let stat of stat; let last= last">
+          <div class="col-lg-3 col-sm-6 col-md-6 stats-item__card">
+
+            <div class="stats-item__card__item">
+
+              <div class="stats-item__card__item__image">
+                <img [src]="stat.icon_url">
+              </div>
+
+              <div class="stats-item__card__item__body">
+                <div class="stats-item__card__item__body__header">{{stat.count}}</div>
+                <div class="stats-item__card__item__body__body">{{stat.name}}</div>
+              </div>
+
+            </div>
+          </div>
+        </ng-container>
+      </div>
+
+      <div class="row store-performance-buyers">
+
+        <div class="col-lg-6" style="padding: 0; margin-top: 32px; padding-right: 15px;">
+          <div class="store-performance-buyers_recent_buyer_item">
+
+          </div>
+        </div>
+
+        <div class="col-lg-6 store-performance-buyers_recent_buyer"
+             style="padding: 0; margin-top: 32px; padding-left: 15px; ">
+
+          <div class="store-performance-buyers_recent_buyer_item">
+
+            <div class="recent-buyers-header">
+              Recent Buyers
+            </div>
+
+            <div class="recent-buyers-body">
+
+              <ng-container *ngFor="let buyers of recentBuyers">
+
+                <div class="recent-buyers-body__buyers_item">
+
+                  <div class="recent-buyers-body__buyers_item__buyers__inner_details">
+                    <div class="recent-buyers-body__buyers_item__buyers__inner_details__image-holder">
+                      <img [src]="buyers.image"/>
+                    </div>
+                    <div class="recent-buyers-body__buyers_item__buyers__inner_details__text-item">
+                      <div
+                        class="recent-buyers-body__buyers_item__buyers__inner_details__text-item__header">
+                        {{buyers.name}}
+                      </div>
+                      <div class="recent-buyer-item-text">
+                        <span>Product:</span>
+                        {{buyers.description}}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="recent-buyers-body__buyers_item__buyers__chat_item">
+                    <div class="recent-buyers-body__buyers_item__buyers__chat_item__char_item_image">
+                      <img src="assets/icon-message.svg">
+                    </div>
+                    <div class="recent-buyers-body__buyers_item__buyers__chat_item__chat-buyers">
+                      Chat Buyer
+                    </div>
+                  </div>
+
+                </div>
+              </ng-container>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="gap"></div>
+
+      <div class="row">
+
+        <div class="col-lg-6">
+
+          <div class="store-details-best-selling-item">
+
+            <div class="store-details-best-selling-item__holder">
+
+              <div class="store-details-best-selling-item__holder__store-details">
+
+                <div class="store-details-header-text">
+                  Store details
+                </div>
+
+                <div class="store-details-item">
+
+                  <div class="store-details-item__image">
+                    <div class="store-details-item__image__verified">
+                      <img src="assets/verified.svg"/>
+                    </div>
+                    <img src="assets/store-profile.png"/>
+                  </div>
+
+                  <div class="store-details-item__description">
+                    <div class="store-details-item__description__header">Saint Morris & Sons hoodlums Store</div>
+                    <div class="store-details-item__description__body">
+                      Hoodlum is a 1997 American crime drama film that gives a fictionalized account of the gang war
+                      between
+                      the Italian/Jewish mafia alliance and the black gangsters of Harlem that took place in the late
+                      1920s
+                      and early 1930s
+                    </div>
+                  </div>
+
+                  <div class="store-details-item__description__edit-btn">
+                    <img src="assets/edit-square.svg">
+                  </div>
+
+                </div>
+
+                <div class="store-details-item__stat">
+
+                  <div class="store-details-item__stat__content">
+                    <div class="store-details-item__stat__content__success_state">
+                      <div class="store-details-item__stat__content__success_state__count">50</div>
+                      <div class="store-details-item__stat__content__success_state__text-body">SUCCESSFUL SALES</div>
+                    </div>
+                    <div class="store-details-item__stat__content__success_state border-width">
+                      <div class="store-details-item__stat__content__success_state__count">153</div>
+                      <div class="store-details-item__stat__content__success_state__text-body">PRODUCTS</div>
+                    </div>
+                    <div class="store-details-item__stat__content__success_state">
+                      <div class="store-details-item__stat__content__success_state__count">225k</div>
+                      <div class="store-details-item__stat__content__success_state__text-body">FOLLOWERS</div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="gap22"></div>
+
+                <div class="store-details-product">
+
+                  <div class="store-details-product__item">
+                    <div class="store-details-product__item__text">
+                      <div>PRODUCT QUALITY:</div>
+                    </div>
+
+                    <div style="width: 100%; height: 12px;">
+                      <div class="progress progress-item">
+                        <div class="progress-bar" style="width: 23%; background-color: #FFB300;"></div>
+                      </div>
+                    </div>
+
+                    <div class="store-details-product__item__percentage">
+                      23%
+                    </div>
+                  </div>
+
+                  <div class="gap10"></div>
+
+                  <div class="store-details-product__item">
+                    <div class="store-details-product__item__text" style="145px;">
+                      <div>DELIVERY RATE:</div>
+                    </div>
+
+                    <div style="width: 100%; height: 12px;">
+                      <div class="progress progress-item">
+                        <div class="progress-bar" style="width: 68%; background-color: #FFB300;"></div>
+                      </div>
+                    </div>
+
+                    <div class="store-details-product__item__percentage">
+                      68%
+                    </div>
+                  </div>
+
+                  <div class="gap10"></div>
+
+                  <div class="store-details-product__item">
+                    <div class="store-details-product__item__text" style="145px;">
+                      <div>COMMUNICATION:</div>
+                    </div>
+
+                    <div style="width: 100%; height: 12px;">
+                      <div class="progress progress-item">
+                        <div class="progress-bar" style="width: 89%; background-color: #FFB300;"></div>
+                      </div>
+                    </div>
+
+                    <div class="store-details-product__item__percentage">
+                      89%
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="gap33"></div>
+
+                <div class="store-details-buttons">
+
+                  <button class="store-details-buttons__promote">
+                    PROMOTE STORE
+                  </button>
+
+                  <button class="store-details-buttons__open">OPEN 2 MONTHS</button>
+
+                  <button class="store-details-buttons__visit">
+                    Visit Store
+                  </button>
+
+                </div>
+
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-6">
+
+          <div class="store-details-best-selling-item">
+
+            <div class="store-details-best-selling-item__holder">
+
+              <div class="store-details-best-selling-item__holder__store-details">
+
+                <div class="store-details-header-text">
+                  Best selling items
+                </div>
+
+                <div class="row">
+
+                  <ng-container *ngFor="let selling of bestSelling; let i=index">
+
+                    <div class="col-lg-6"
+                         style="padding: 0;{{i == 0  || i == 2? 'padding-right: 4px;': 'padding-left: 4px;'}}">
+                      <div class="bestselling-item">
+                        <div class="bestselling-item__image">
+                          <img srcset="{{selling.image}}, {{selling.image_2}} 2x" alt="…">
+                        </div>
+
+                        <div class="bestselling-item__description">
+
+                          <div class="bestselling-item__description__text">{{selling.name}}</div>
+
+                          <div class="bestselling-item__description__sold-stat">
+                            <div class="bestselling-item__description__sold-stat__info mr-8">
+                              <div class="bestselling-item__description__sold-stat__info__title">Sold</div>
+                              <div class="bestselling-item__description__sold-stat__info__amount">{{selling.sold}}</div>
+                            </div>
+                            <div class="bestselling-item__description__sold-stat__info ml-4p"
+                                 style="padding-right: 5px;">
+                              <div class="bestselling-item__description__sold-stat__info__title">Total Sales</div>
+                              <div
+                                class="bestselling-item__description__sold-stat__info__amount">{{selling.total}}</div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </ng-container>
+
+                </div>
+
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="overlay-m" *ngIf="isMobile">
+
+    <div class="overlay-m__sidebar" *ngIf="showSidebar"
+         style="position:fixed; width: 100%; height: 100%; z-index: 100001; background-color: rgba(229,229,229, 0.85);opacity: 1;
+          max-width: 100% !important;" (click)="onShowNav()">
+      <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="overlay-m__container">
+
+      <app-navbar style="width: 100%;" (clicked)="onShowNav()"></app-navbar>
+
+      <div class="row stats-item">
+        <ng-container *ngFor="let stat of stat; let last= last; let i= index">
+          <div class="col-lg-3 col-sm-6 col-md-6 stats-item__card mobile-card-check"
+               style="width: 50%; {{i == 0 || i == 2 ? 'padding-right: 6px;' : 'padding-left: 6px;'}}
+               {{i == 0 || i == 1 ? 'margin-bottom: 12px;' : ''}}
+              ">
+
+            <div class="stats-item__card__item">
+
+              <div class="stats-item__card__item__image">
+                <img [src]="stat.icon_url">
+              </div>
+
+              <div class="stats-item__card__item__body">
+                <div class="stats-item__card__item__body__header">{{stat.count}}</div>
+                <div class="stats-item__card__item__body__body">{{stat.name}}</div>
+              </div>
+
+            </div>
+          </div>
+        </ng-container>
+      </div>
+
+      <div class="row store-performance-buyers">
+
+        <div class="col-lg-6" style="margin: 0 !important;margin-top: 16px !important; padding: 0">
+          <div class="store-performance-buyers_recent_buyer_item">
+
+          </div>
+        </div>
+
+        <div class="col-lg-6 store-performance-buyers_recent_buyer"
+             style="margin: 0 !important;margin-top: 16px !important; padding: 0">
+
+          <div class="store-performance-buyers_recent_buyer_item">
+
+            <div class="recent-buyers-header">
+              Recent Buyers
+            </div>
+
+            <div class="recent-buyers-body">
+
+              <ng-container *ngFor="let buyers of recentBuyers">
+
+                <div class="recent-buyers-body__buyers_item">
+
+                  <div class="recent-buyers-body__buyers_item__buyers__inner_details">
+                    <div class="recent-buyers-body__buyers_item__buyers__inner_details__image-holder">
+                      <img [src]="buyers.image"/>
+                    </div>
+                    <div class="recent-buyers-body__buyers_item__buyers__inner_details__text-item">
+                      <div
+                        class="recent-buyers-body__buyers_item__buyers__inner_details__text-item__header">
+                        {{buyers.name}}
+                      </div>
+                      <div class="recent-buyer-item-text">
+                        <span>Product:</span>
+                        {{buyers.description}}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="recent-buyers-body__buyers_item__buyers__chat_item">
+                    <div class="recent-buyers-body__buyers_item__buyers__chat_item__char_item_image">
+                      <img src="assets/icon-message.svg">
+                    </div>
+                    <div class="recent-buyers-body__buyers_item__buyers__chat_item__chat-buyers">
+                      Chat Buyer
+                    </div>
+                  </div>
+
+                </div>
+              </ng-container>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="gap"></div>
+
+      <div class="row">
+
+        <div class="col-lg-6">
+
+          <div class="store-details-best-selling-item">
+
+            <div class="store-details-best-selling-item__holder">
+
+              <div class="store-details-best-selling-item__holder__store-details">
+
+                <div class="store-details-header-text">
+                  Store details
+                </div>
+
+                <div class="store-details-item">
+
+                  <div class="store-details-item__image">
+                    <div class="store-details-item__image__verified">
+                      <img src="assets/verified.svg"/>
+                    </div>
+                    <img src="assets/store-profile.png"/>
+                  </div>
+
+                  <div class="store-details-item__description">
+                    <div class="store-details-item__description__header">Saint Morris & Sons hoodlums Store</div>
+                    <div class="store-details-item__description__body">
+                      Hoodlum is a 1997 American crime drama film that gives a fictionalized account of the gang war
+                      between
+                      the Italian/Jewish mafia alliance and the black gangsters of Harlem that took place in the late
+                      1920s
+                      and early 1930s
+                    </div>
+                  </div>
+                </div>
+
+                <div class="store-details-item__stat">
+
+                  <div class="store-details-item__stat__content">
+                    <div class="store-details-item__stat__content__success_state">
+                      <div class="store-details-item__stat__content__success_state__count">50</div>
+                      <div class="store-details-item__stat__content__success_state__text-body">SUCCESSFUL SALES</div>
+                    </div>
+                    <div class="store-details-item__stat__content__success_state border-width">
+                      <div class="store-details-item__stat__content__success_state__count">153</div>
+                      <div class="store-details-item__stat__content__success_state__text-body">PRODUCTS</div>
+                    </div>
+                    <div class="store-details-item__stat__content__success_state">
+                      <div class="store-details-item__stat__content__success_state__count">225k</div>
+                      <div class="store-details-item__stat__content__success_state__text-body">FOLLOWERS</div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="gap22"></div>
+
+                <div class="store-details-product">
+
+                  <div class="store-details-product__item">
+                    <div class="store-details-product__item__text">
+                      <div>PRODUCT QUALITY:</div>
+                    </div>
+
+                    <div style="width: 100%; height: 12px;">
+                      <div class="progress progress-item">
+                        <div class="progress-bar" style="width: 23%; background-color: #FFB300;"></div>
+                      </div>
+                    </div>
+
+                    <div class="store-details-product__item__percentage">
+                      23%
+                    </div>
+                  </div>
+
+                  <div class="gap10"></div>
+
+                  <div class="store-details-product__item">
+                    <div class="store-details-product__item__text" style="145px;">
+                      <div>DELIVERY RATE:</div>
+                    </div>
+
+                    <div style="width: 100%; height: 12px;">
+                      <div class="progress progress-item">
+                        <div class="progress-bar" style="width: 68%; background-color: #FFB300;"></div>
+                      </div>
+                    </div>
+
+                    <div class="store-details-product__item__percentage">
+                      68%
+                    </div>
+                  </div>
+
+                  <div class="gap10"></div>
+
+                  <div class="store-details-product__item">
+                    <div class="store-details-product__item__text" style="145px;">
+                      <div>COMMUNICATION:</div>
+                    </div>
+
+                    <div style="width: 100%; height: 12px;">
+                      <div class="progress progress-item">
+                        <div class="progress-bar" style="width: 89%; background-color: #FFB300;"></div>
+                      </div>
+                    </div>
+
+                    <div class="store-details-product__item__percentage">
+                      89%
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="gap33"></div>
+
+                <div class="store-details-buttons" style="flex-direction: column;">
+
+                  <button class="store-details-buttons__promote" style="width: 100%">
+                    PROMOTE STORE
+                  </button>
+
+                  <!--                  <button class="store-details-buttons__open">OPEN 2 MONTHS</button>-->
+
+                  <button class="store-details-buttons__visit" style="margin-top: 16px; width: 100%;">
+                    Visit Store
+                  </button>
+
+                </div>
+
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+        </div>
+        <div class="gap"></div>
+        <div class="col-lg-6">
+
+          <div class="store-details-best-selling-item">
+
+            <div class="store-details-best-selling-item__holder">
+
+              <div class="store-details-best-selling-item__holder__store-details">
+
+                <div class="store-details-header-text">
+                  Best selling items
+                </div>
+
+                <div class="row">
+
+                  <ng-container *ngFor="let selling of bestSelling; let i=index">
+
+                    <div class="col-lg-6"
+                         style="padding: 0;{{i == 0  || i == 2? 'padding-right: 4px;': 'padding-left: 4px;'}}">
+                      <div class="bestselling-item">
+                        <div class="bestselling-item__image">
+                          <img srcset="{{selling.image}}, {{selling.image_2}} 2x" alt="…">
+                        </div>
+
+                        <div class="bestselling-item__description">
+
+                          <div class="bestselling-item__description__text">{{selling.name}}</div>
+
+                          <div class="bestselling-item__description__sold-stat">
+                            <div class="bestselling-item__description__sold-stat__info mr-8" style="width: 100%;">
+                              <div class="bestselling-item__description__sold-stat__info__title">Sold</div>
+                              <div class="bestselling-item__description__sold-stat__info__amount">{{selling.sold}}</div>
+                            </div>
+                            <div class="bestselling-item__description__sold-stat__info ml-4p"
+                                 style="padding-right: 5px; width: 100%;">
+                              <div class="bestselling-item__description__sold-stat__info__title">Total Sales</div>
+                              <div
+                                class="bestselling-item__description__sold-stat__info__amount">{{selling.total}}</div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </ng-container>
+
+                </div>
+
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+

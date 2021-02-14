@@ -1,0 +1,107 @@
+.side-bar {
+  padding: 16px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  opacity: 1;
+  height: 100vw;
+  //position: fixed;
+  top: 0;
+}
+
+.side-bar-item {
+  width: 100%;
+  height: 100%;
+  .nav-item {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+
+.nav-item-list {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 8px;
+
+  &__icon {
+    margin-right: 8px;
+  }
+
+  &__text {
+    text-align: left;
+    //font: normal normal bold 14px/16px Gotham;
+    letter-spacing: 0px;
+    color: #151716;
+    opacity: 1;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: Gotham-Medium;
+  }
+
+}
+
+
+.active-menu {
+  background-color: #F0F0F0;
+  border-radius: 4px;
+  opacity: 1;
+  height: 100%;
+}
+
+.sidebar-header {
+  margin-top: 53px;
+  margin-bottom: 62px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__image {
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+    border: 2px solid #D9D9D9;
+    overflow: hidden;
+    opacity: 1;
+    margin-bottom: 8px;
+
+    &__image_holder {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__text-body {
+    font: normal normal normal 14px/20px Gotham;
+    letter-spacing: 0px;
+    color: #727272;
+    opacity: 1;
+    width: 152px;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-family: 'Gotham-light';
+  }
+
+  &__profile-btn {
+    outline: none;
+    border: none;
+    background: #004D47 0% 0% no-repeat padding-box;
+    border-radius: 17px;
+    opacity: 1;
+    width: 124px;
+    padding: 10px 26px;
+    text-align: center;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    font-size: 14px;
+    font-family: 'Gotham-light';
+    font-size: 14px;
+    font-weight: 600;
+  }
+}

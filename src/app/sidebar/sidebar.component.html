@@ -1,1 +1,78 @@
-<p>sidebar works!</p>
+<div class="side-bar d-sm-none d-md-block d-none d-sm-block" *ngIf="!isMobile">
+
+  <div class="side-bar-item">
+
+    <div class="nav-item">
+
+      <div class="sidebar-header">
+
+        <div class="sidebar-header__image">
+          <img src="assets/store-profile.png" class="sidebar-header__image__image_holder"/>
+        </div>
+
+        <div class="sidebar-header__text-body">
+          Saint Morris & Sons hoodlums Store
+        </div>
+
+        <button class="sidebar-header__profile-btn">Visit Store</button>
+
+      </div>
+
+      <ng-container *ngFor="let item of nav">
+        <div class="nav-item-list" [ngClass]="{'active-menu': item.active}">
+          <div class="nav-item-list__icon" style="color: #151716;">
+            <img [src]="item.icon_link">
+          </div>
+          <div class="nav-item-list__text">{{item.name}}</div>
+
+          <div class="nav-item-list__icon" style="color: #151716;     padding-left: 32px;" *ngIf="item.dropdown">
+            <img [src]="item.add">
+          </div>
+        </div>
+      </ng-container>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="side-bar" *ngIf="isMobile" style="width: 75%;height: 100%; z-index: 10000001;     overflow: auto;">
+
+  <div class="side-bar-item">
+
+    <div class="nav-item">
+
+      <div class="sidebar-header">
+
+        <div class="sidebar-header__image">
+          <img src="assets/store-profile.png" class="sidebar-header__image__image_holder"/>
+        </div>
+
+        <div class="sidebar-header__text-body">
+          Saint Morris & Sons hoodlums Store
+        </div>
+
+        <button class="sidebar-header__profile-btn">Visit Store</button>
+
+      </div>
+
+      <ng-container *ngFor="let item of nav">
+        <div class="nav-item-list" [ngClass]="{'active-menu': item.active}">
+          <div class="nav-item-list__icon" style="color: #151716;">
+            <img [src]="item.icon_link">
+          </div>
+          <div class="nav-item-list__text">{{item.name}}</div>
+
+          <div class="nav-item-list__icon" style="color: #151716;     padding-left: 32px;" *ngIf="item.dropdown">
+            <img [src]="item.add">
+          </div>
+        </div>
+      </ng-container>
+
+    </div>
+
+  </div>
+
+</div>
+

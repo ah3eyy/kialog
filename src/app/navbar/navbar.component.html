@@ -1,1 +1,29 @@
-<p>navbar works!</p>
+<div class="nav-header" *ngIf="!isMobile">
+  <div class="nav-header-body">
+    <div class="nav-body-text">
+      Welcome to SellersHub
+    </div>
+    <div>
+      <img src="assets/notification_icon.svg">
+    </div>
+  </div>
+</div>
+
+
+<div class="nav-header" *ngIf="isMobile">
+
+  <div class="nav-header-body-m">
+    <div style="display: flex; align-items: center;">
+      <div style="margin-right: 24px;" (click)="onClick()">
+        <img src="assets/menu.svg"/>
+      </div>
+
+      <div class="nav-body-text-m" style="    margin-top: 4px;">
+        <span>Welcome to</span> SellersHub
+      </div>
+    </div>
+    <div>
+      <img src="assets/notification_icon.svg">
+    </div>
+  </div>
+</div>
