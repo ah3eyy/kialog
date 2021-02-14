@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit {
     },
   ];
   public lineChartLegend = true;
-  public lineChartType = 'line';
+  public lineChartType = <any>'line';
   public lineChartPlugins = [];
 
   constructor() {
